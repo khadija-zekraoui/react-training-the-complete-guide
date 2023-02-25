@@ -1,15 +1,18 @@
 import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
+import Card from "./Card"
 
 function ExpenseItem(props) {
   return (
     // one DIV is allowed
-    <div className="expense-item">
-      <div>{props.date.toISOString()}</div>
+    <Card className="expense-item">
+      {/* self closing element because it doesn't have content */}
+      <ExpenseDate date={props.date}/> 
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 
